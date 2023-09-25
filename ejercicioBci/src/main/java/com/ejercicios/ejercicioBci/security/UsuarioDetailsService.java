@@ -28,7 +28,8 @@ public class UsuarioDetailsService implements UserDetailsService {
         if (!Objects.isNull(usuario)){
             return new User(usuario.getEmail(),usuario.getPassword(),new ArrayList<>());
         }else{
-            throw new UsernameNotFoundException("Usuario no encontrado");
+            log.error("Usuario o Token inválido.");
+            return null;
         }
     }
 

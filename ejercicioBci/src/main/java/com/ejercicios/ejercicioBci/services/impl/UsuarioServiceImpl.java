@@ -101,10 +101,10 @@ public class UsuarioServiceImpl implements UsuarioService {
                 throw new UsuarioException("Usuario no encontrado, favor verificar el mail.",HttpStatus.BAD_REQUEST);
             }
         }catch (UsuarioException usuarioException){
-            log.info("Ha ocurrido un error en el registro, el mensaje de error es : {}",usuarioException.getMessage());
+            log.info("Ha ocurrido un error en la modificacion, el mensaje de error es : {}",usuarioException.getMessage());
             return new ResponseEntity<>(new UsuarioErrorResponse(usuarioException.getMessage()),usuarioException.getHttpStatus());
         }catch (Exception exception){
-            log.info("Ha ocurrido un error en el registro, el mensaje de error es : {}",exception.getMessage());
+            log.info("Ha ocurrido un error en la modificacion, el mensaje de error es : {}",exception.getMessage());
             return new ResponseEntity<>(new UsuarioErrorResponse("Error interno"),HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -125,10 +125,10 @@ public class UsuarioServiceImpl implements UsuarioService {
                 throw new UsuarioException("Usuario no encontrado, favor verificar el mail.",HttpStatus.BAD_REQUEST);
             }
         }catch (UsuarioException usuarioException){
-            log.info("Ha ocurrido un error en el registro, el mensaje de error es : {}",usuarioException.getMessage());
+            log.info("Ha ocurrido un error en la búsqueda, el mensaje de error es : {}",usuarioException.getMessage());
             return new ResponseEntity<>(new UsuarioErrorResponse(usuarioException.getMessage()),usuarioException.getHttpStatus());
         }catch (Exception exception){
-            log.info("Ha ocurrido un error en el registro, el mensaje de error es : {}",exception.getMessage());
+            log.info("Ha ocurrido un error en la búsqueda, el mensaje de error es : {}",exception.getMessage());
             return new ResponseEntity<>(new UsuarioErrorResponse("Error interno"),HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
